@@ -17,7 +17,7 @@ public class ProductsController {
 	private ProductService productService;
 	
 	@Autowired
-	public ProductsController(ProductService productService) {
+	public ProductsController(ProductService productService) {  // mock yapı kurup test yapmaya izin verir bu yapı.
 		super();
 		this.productService = productService;
 	}
