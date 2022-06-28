@@ -1,6 +1,6 @@
 package kodlamaio.northwind.core.utilities.results;
 
-public abstract  class Result {
+public class Result { //super class.   abstract olabilirdi ama yazmadık.
 
 	private boolean success;
 	private String message;
