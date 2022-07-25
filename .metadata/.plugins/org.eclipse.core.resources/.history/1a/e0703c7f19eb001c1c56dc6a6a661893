@@ -1,0 +1,17 @@
+package intro;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String [] krediler = {
+		"Hýzlý Kredi",
+		"Mutlu emekli kredisi",
+		"Konut kredisi",
+		"Çiftçi kredisi",
+		"Msb kredisi",
+		"Meb kredisi"
+};
+	}
+
+}
