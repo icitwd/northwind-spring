@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Product {
 
 	@Id
@@ -23,12 +27,15 @@ public class Product {
 	@Column(name = "product_id")
 	private int id;
 
-	@Column(name = "category_id")
-	private int categoryId;
+//	@Column(name = "category_id") aşağıda yazdığımız için buna gerek kalmadı.
+//	private int categoryId;
 
 	@Column(name = "product_name")
 	private String productName;
 
+	@Column(name = "supplier_id")
+	private short supplierId;
+	
 	@Column(name = "unit_price")
 	private double unitPrice;
 
@@ -37,6 +44,18 @@ public class Product {
 
 	@Column(name = "quantity_per_unit")
 	private String quantityPerUnit;
+
+	@ManyToOne()
+	@JoinColumn(name = "category_id")
+	private Category category;
 	
+	@Column(name = "units_on_order")
+	private short unitsOnOrder;
+	
+	@Column(name = "reorder_level")
+	private short reorderLevel;
+	
+	@Column(name = "discontinued")
+	private short discontinued;
 
 }
