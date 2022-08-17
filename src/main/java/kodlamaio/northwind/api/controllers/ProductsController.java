@@ -3,10 +3,10 @@ package kodlamaio.northwind.api.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +19,8 @@ import kodlamaio.northwind.entities.concretes.Product;
 import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping( value="/api/products")
+@CrossOrigin
 public class ProductsController {
 
 	private ProductService productService;
@@ -42,7 +43,7 @@ public class ProductsController {
 
 	}
 
-	@PostMapping("/add")
+	@PostMapping(value="/add")
 	public Result add(@RequestBody Product product) {
 		return this.productService.add(product);
 	}

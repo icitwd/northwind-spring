@@ -10,7 +10,7 @@ import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessResult;
-import kodlamaio.northwind.entities.concretes.Product;
+
 
 
 @Service

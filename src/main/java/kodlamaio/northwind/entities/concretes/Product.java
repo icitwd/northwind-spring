@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +26,7 @@ public class Product {
 	@Column(name = "product_id")
 	private int id;
 
-//	@Column(name = "category_id") aşağıda yazdığımız için buna gerek kalmadı.
+//	@Column(name = "category_id") //aşağıda yazdığımıziçin bunagerek kalmadı.
 //	private int categoryId;
 
 	@Column(name = "product_name")
@@ -35,12 +34,9 @@ public class Product {
 
 	@Column(name = "supplier_id")
 	private short supplierId;
-	
+
 	@Column(name = "unit_price")
 	private double unitPrice;
-
-	@Column(name = "units_in_stock")
-	private short unitsInStock;
 
 	@Column(name = "quantity_per_unit")
 	private String quantityPerUnit;
@@ -48,14 +44,17 @@ public class Product {
 	@ManyToOne()
 	@JoinColumn(name = "category_id")
 	private Category category;
-	
+
 	@Column(name = "units_on_order")
 	private short unitsOnOrder;
-	
+
 	@Column(name = "reorder_level")
 	private short reorderLevel;
-	
+
 	@Column(name = "discontinued")
 	private short discontinued;
+	
+	@Column( name= "units_in_stock")
+	private short unitsInStock;
 
 }
