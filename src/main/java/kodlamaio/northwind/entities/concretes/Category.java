@@ -2,6 +2,7 @@ package kodlamaio.northwind.entities.concretes;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -29,6 +30,7 @@ public class Category {
 	@Column(name = "category_name")
 	private String categoryName;
      
-	@OneToMany(mappedBy= "category")
+	@OneToMany(mappedBy= "category",
+			cascade= {CascadeType.ALL})
 	private List<Product> products; 
 }
